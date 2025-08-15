@@ -11,14 +11,12 @@ ENV/
 env.bak/
 venv.bak/
 
-# Git files
+# Git
 .git
 .gitignore
 
-# Data files (we don't need raw/processed data in Docker)
+# Data files
 data/raw/
-
-# Ignore everything in processed except embeddings.npy
 data/processed/*
 !data/processed/embeddings.npy
 
