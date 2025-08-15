@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #333;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .result {
+            background-color: #fafafa;
+            padding: 10px;
+            margin-top: 10px;
+            border-left: 4px solid #4CAF50;
+        }
+        .phishing {
+            border-left-color: red;
+            color: red;
+            font-weight: bold;
+        }
+        .legitimate {
+            border-left-color: green;
+            color: green;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+        }
+        a:hover {
+            background-color: #45a049;
+        }
+        .model-label {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Prediction Result</h1>
+
+    <h3>Email:</h3>
+    <pre>{{ email }}</pre>
+
+    <div class="model-label">Logistic Regression Prediction:</div>
+    <div class="result {% if lr_label == 'Phishing' %}phishing{% else %}legitimate{% endif %}">
+        {{ lr_label }}
+    </div>
+
+    <div class="model-label">Isolation Forest Prediction:</div>
+    <div class="result {% if iforest_label == 'Phishing' %}phishing{% else %}legitimate{% endif %}">
+        {{ iforest_label }}  
+        <br><small>Anomaly Score: {{ iforest_score }}</small>
+    </div>
+
+    <a href="/">Check another email</a>
+</div>
+</body>
+</html>

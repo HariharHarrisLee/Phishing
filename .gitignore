@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Ignore raw and processed data
+/data/raw/
+/data/raw/*
+/data/processed/
+/data/processed/*
