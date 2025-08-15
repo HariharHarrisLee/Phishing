@@ -13,7 +13,8 @@ app = Flask(__name__)
 # ----------------------
 # Paths and settings
 # ----------------------
-ROOT = r"C:\Users\Harri\OneDrive\Desktop\Phishing_Project\Phishing"
+# Dynamically set ROOT to the container's /app directory
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # /app
 IFOREST_PATH = os.path.join(ROOT, "models", "iforest_model.joblib")
 LR_PATH = os.path.join(ROOT, "models", "lr_model.joblib")
 THRESHOLD = 0.005  # optional for reference; IF uses predict() directly
