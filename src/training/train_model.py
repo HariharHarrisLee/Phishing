@@ -31,7 +31,6 @@ else:
 #Train
 print("Training IsolationForest...")
 
-#Contamination: proportion of anomalies expected (small since anomalies are phishing emails)
 contamination = 0.5
 
 iforest_model = IsolationForest(
