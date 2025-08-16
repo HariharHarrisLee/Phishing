@@ -34,7 +34,6 @@ plt.title(f'Confusion Matrix (Threshold={THRESHOLD})')
 plt.tight_layout()
 plt.show()
 
-
 plt.figure(figsize=(8,5))
 sns.histplot(df[df['label']==0]['anomaly_score'], color='blue', label='Legitimate', bins=50, kde=True, stat="density")
 sns.histplot(df[df['label']==1]['anomaly_score'], color='red', label='Phishing', bins=50, kde=True, stat="density")
